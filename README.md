@@ -18,7 +18,7 @@ Project management is a key, ongoing component of the software development lifec
 ## Proposed Solution, Methods, and Objectives
 The proposed solution is a system that tracks the completion of tasks of varying weights by following each member's workflow day-by-day. For this project, each member is given equal permission to assign tasks to each other, allowing for flexibility within the team and application. Through this implementation, one single member would not be placed at the top of the hierarchy. Institutions may enforce their own rules regarding permissions at their discretion. Through this solution, team members can see the relative position of each member during the development cycle.
 
-### “Dev” Class
+### “Developer” Class
 Defines each team member and task, including the weights and deadlines of the tasks, as well as each team member's position title and expertise.
 
 ### Assignment Method
