@@ -67,6 +67,18 @@ void mark_as_late(Task* task) {
     printf("Task '%s' is late\n", task->name);
 }
 
+void display_developer_tasks(const Dev* dev) {
+    printf("Developer: %s\n", dev->name);
+    printf("Title: %s\n", dev->title);
+    printf("Expertise: %s\n\n", dev->expertise);
+
+    printf("Tasks:\n");
+    for (int i = 0; i < dev->task_count; ++i) {
+        printf("- %s (weight: %d, deadline: %s, status: %s)\n",
+               dev->tasks[i].name, dev->tasks[i].weight, dev->tasks[i].deadline, dev->tasks[i].status);
+    }
+}
+
 int main() {
     Dev dev1 = {"Gurvansh Gill", "Project Manager", "Management", {}, 0};
     Dev dev2 = {"Aaryan Goyal", "Software Engineer", "Development", {}, 0};
@@ -82,6 +94,8 @@ int main() {
 
     remind_task(&task2);
     mark_as_late(&task2);
+
+    display_developer_tasks(&dev2);
 
     return 0;
 }
