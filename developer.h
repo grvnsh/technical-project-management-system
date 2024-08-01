@@ -1,0 +1,5 @@
+#ifndef DEVELOPER_H
+#define DEVELOPER_H
+
+#define MAX_TASKS 10
+#define MAX_NAME_LENGTH 50
