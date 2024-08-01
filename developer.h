@@ -10,3 +10,11 @@ typedef struct {
     char deadline[MAX_NAME_LENGTH];
     char status[MAX_NAME_LENGTH];
 } Task;
+
+typedef struct {
+    char name[MAX_NAME_LENGTH];
+    char title[MAX_NAME_LENGTH];
+    char expertise[MAX_NAME_LENGTH];
+    Task tasks[MAX_TASKS];
+    int task_count;
+} Dev;
