@@ -3,3 +3,10 @@
 
 #define MAX_TASKS 10
 #define MAX_NAME_LENGTH 50
+
+typedef struct {
+    char name[MAX_NAME_LENGTH];
+    int weight;
+    char deadline[MAX_NAME_LENGTH];
+    char status[MAX_NAME_LENGTH];
+} Task;
