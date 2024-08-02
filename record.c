@@ -1,5 +1,7 @@
 #include "record.h"
 #include <stdlib.h>
+#include <stdio.h>
+#include <stdbool.h>
 #include <string.h>
 
 Achievement *create_achievement() {
