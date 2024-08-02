@@ -12,7 +12,7 @@ typedef enum {
     COMPLETED
 } EventStatus;
 
-struct Event {
+typedef struct {
     char name[MAX_NAME_LENGTH];
     char frequency[MAX_NAME_LENGTH];
     char sponsor[MAX_NAME_LENGTH];
@@ -21,7 +21,7 @@ struct Event {
     int priority;
     EventStatus status;
     int progress;
-};
+} Event;
 
 Event *create_event();
 bool edit_event(Event *event, const char *new_name, const char *new_frequency, const char *new_sponsor);
