@@ -45,6 +45,47 @@ char *status_to_string(EventStatus status) {
     }
 }
 
+int get_event_duration(const Event *event) {
+    if (!event) {
+        fprintf(stderr, "Error: Event is null\n");
+        return -1; // Indicate error
+    }
+    time_t duration = event->end_date - event->start_date;
+    return (int)duration; // Convert to seconds
+}
+
+bool is_event_overdue(const Event *event) {
+    if (!event) {
+        fprintf(stderr, "Error: Event is null\n");
+        return false;
+    }
+    time_t current_time = time(NULL);
+    return current_time > event->end_date;
+}
+
+char *format_duration(int seconds) {
+    static char buffer[64]; // Static buffer for efficiency
+    time_t duration = (time_t)seconds;
+    // Break down seconds into days, hours, minutes, and seconds
+    int days = duration / (60 * 60 * 24);
+    duration %= (60 * 60 * 24);
+    int hours = duration / (60 * 60);
+    duration %= (60 * 60);
+    int minutes = duration / 60;
+    int seconds_remaining = duration % 60;
+    if (days > 0) {
+        snprintf(buffer, sizeof(buffer), "%dd %dh %dm %ds", days, hours, minutes, seconds_remaining);
+    } else if (hours > 0) {
+        snprintf(buffer, sizeof(buffer), "%dh %dm %ds", hours, minutes, seconds_remaining);
+    } else if (minutes > 0) {
+        snprintf(buffer, sizeof(buffer), "%dm %ds", minutes, seconds_remaining);
+    } else {
+        snprintf(buffer, sizeof(buffer), "%ds", seconds_remaining);
+    }
+
+    return buffer;
+}
+
 void delete_event(Event *event) {
     free(event);
 }
