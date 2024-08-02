@@ -25,3 +25,14 @@ bool edit_event(Event *event, const char *new_name, const char *new_frequency, c
 void delete_event(Event *event) {
     free(event);
 }
+
+void display_event(const Event *event) {
+    if (!event) {
+        printf("Event is null\n");
+        return;
+    }
+
+    printf("Event Name: %s\n", event->name);
+    printf("Frequency: %s\n", event->frequency);
+    printf("Sponsor: %s\n", event->sponsor);
+}
