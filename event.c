@@ -1,6 +1,7 @@
 #include "event.h"
 #include <stdlib.h>
 #include <string.h>
+#include <time.h>
 
 Event *create_event() {
     Event *new_event = (Event *)malloc(sizeof(Event));
@@ -20,6 +21,28 @@ bool edit_event(Event *event, const char *new_name, const char *new_frequency, c
     strncpy(event->frequency, new_frequency, MAX_NAME_LENGTH);
     strncpy(event->sponsor, new_sponsor, MAX_NAME_LENGTH);
     return true;
+}
+
+void update_status(Event *event, EventStatus new_status) {
+    if (!event) {
+        fprintf(stderr, "Error: Event is null\n");
+        return;
+    }
+
+    event->status = new_status;
+}
+
+char *status_to_string(EventStatus status) {
+    switch (status) {
+        case TODO:
+            return "To Do";
+        case IN_PROGRESS:
+            return "In Progress";
+        case COMPLETED:
+            return "Completed";
+        default:
+            return "Unknown";
+    }
 }
 
 void delete_event(Event *event) {
