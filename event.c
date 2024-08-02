@@ -31,7 +31,6 @@ void display_event(const Event *event) {
         printf("Event is null\n");
         return;
     }
-
     printf("Event Name: %s\n", event->name);
     printf("Frequency: %s\n", event->frequency);
     printf("Sponsor: %s\n", event->sponsor);
