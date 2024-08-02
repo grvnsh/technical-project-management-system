@@ -1,5 +1,7 @@
 #include <stdio.h>
 #include <string.h>
+#include "record.h"
+#include "event.h"
 
 #define MAX_TASKS 10
 #define MAX_NAME_LENGTH 50
@@ -17,6 +19,10 @@ typedef struct {
     char expertise[MAX_NAME_LENGTH];
     Task tasks[MAX_TASKS];
     int task_count;
+    Achievement achievements[MAX_ACHIEVEMENTS]; // Adjust MAX_ACHIEVEMENTS as needed
+    int achievement_count;
+    Offense offenses[MAX_OFFENSES]; // Adjust MAX_OFFENSES as needed
+    int offense_count;
 } Dev;
 
 void assign_task(Dev* dev, Task task) {
