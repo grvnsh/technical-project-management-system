@@ -25,6 +25,11 @@ struct Event {
 
 Event *create_event();
 bool edit_event(Event *event, const char *new_name, const char *new_frequency, const char *new_sponsor);
+void update_status(Event *event, EventStatus new_status);
+char *status_to_string(EventStatus status);
+int get_event_duration(const Event *event);
+bool is_event_overdue(const Event *event);
+char *format_duration(int seconds);
 void delete_event(Event *event);
 void display_event(const Event *event);
 
