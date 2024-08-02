@@ -15,5 +15,6 @@ typedef struct {
 Event *create_event();
 bool edit_event(Event *event, const char *new_name, const char *new_frequency, const char *new_sponsor);
 void delete_event(Event *event);
+void display_event(const Event *event);
 
 #endif
