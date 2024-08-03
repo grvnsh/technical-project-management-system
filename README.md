@@ -5,8 +5,6 @@
 ### Authors
 - Gurvansh Gill (200914200)
 - Aaryan Goyal (210651560)
-- Emal Bakhtari (190962970)
-- Navid Jussab (169026742)
 - William McMahon (210884920)
 
 ## Executive Summary
